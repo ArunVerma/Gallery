@@ -1,0 +1,21 @@
+<% if @gallery.present? && @gallery.errors.any? %>
+  <div id="error_explanation">
+    <h3>
+      Encountered <%= pluralize(@gallery.errors.count, "error") %> below :
+    </h3>
+    <ul>
+      <% @gallery.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<% if @results.present? %>
+  <table border="1">
+    <tr><th>Results</th></tr>
+    <% @results.each do | result | %>
+      <tr><td>Room <%= result[0] %>, <%= result[1] %> minute average visit, <%= result[2] %> visitor(s) total</td></tr>
+    <% end %>
+  </table>
+<% end %>

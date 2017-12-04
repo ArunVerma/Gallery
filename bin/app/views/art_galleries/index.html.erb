@@ -1,0 +1,11 @@
+<h1>Art Gallery Visitor Records</h1>
+<table border="1">
+  <tr>
+    <%= form_tag art_galleries_log_visitor_records_path, method: :post, multipart: true, remote: true, format: 'js' do %>
+    <!-- <%#= form_tag art_galleries_log_visitor_records_path, method: :post, multipart: true do %> -->
+      <td>To get details <%= file_field_tag 'file'%> </td>
+      <td><%= submit_tag 'Get Records' %></td>
+    <% end %>
+  </tr>
+</table>
+<p id="visitor-data"></p>
